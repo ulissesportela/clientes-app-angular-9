@@ -12,7 +12,7 @@ export class ClientesFormComponent implements OnInit {
 
   cliente: Cliente
   success: boolean = false
-  errors:string[]
+  errors: string[]
 
   constructor(private service : ClientesService ) { 
     this.cliente = new Cliente()
@@ -27,9 +27,8 @@ export class ClientesFormComponent implements OnInit {
       this.errors = []
       this.cliente = response
     }, response => {
-      this.errors = response.error.errors
       this.success=false
-
+      this.errors = response.error.errors
     })
   }
 }
